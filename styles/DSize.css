@@ -12,11 +12,11 @@
     color:#4c4;
     margin-top: 5px;
     margin-bottom: 0px;
-
-
 }
 
-
+#section2, #section4, #section6{
+margin-left:-60px;
+}
 
 #addToFavories{
     height: 36px;
@@ -214,8 +214,8 @@ body > header {
 
 .outline {
     background-color: yellow;
-    height: 370px;
-    width: 448px;
+    height: 400px;
+    width: 570px;
     display: grid;
     grid-template-areas:
         "a"
@@ -444,14 +444,14 @@ font-size: 17px;
     "a b"
     "c d"
     "e f";
-    margin-top: 120px;
-    margin-left: -20px;
+    margin-top: 70px;
+    margin-left: -5px;
 }
 
 section{
     display: flex;
-    width: 524px;
-    height: 336px;
+    width: 635px;
+    height: 420px;
     align-items: center;
     justify-content: center;
     
