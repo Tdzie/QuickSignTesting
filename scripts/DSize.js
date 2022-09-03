@@ -77,6 +77,7 @@ sizeInput.addEventListener('click', function(){this.select();})
 // ============================ function to get the date for this saturday used for value of sale date input and date on sign ============
 //  
 function getSaturdayOfCurrentWeek() {
+	    let retailOnSign = document.getElementById('retail'+ signGridNumber);
   const today = new Date();
   const monday = today.getDate() - today.getDay() + 1;
   const sixth = monday + 5;
