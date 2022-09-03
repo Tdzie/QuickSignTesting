@@ -234,7 +234,6 @@ body > header {
     padding: 2px;
     font-weight: bold;
     grid-area: a;
-    width: 446px;
 }
 
     .outlineHeaderSpan{
@@ -261,7 +260,6 @@ body {
     padding-top: 10px;
     font-family: Clarendon, serif;
     width: 414px;
-    font-weight: bold;
 }
 
 .altDescription {
