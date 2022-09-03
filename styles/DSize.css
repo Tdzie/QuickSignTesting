@@ -363,7 +363,7 @@ font-size: 25px;
     font-family: Rockwell, serif;
 }
 
-.youSaveBoxDiv {
+#youSaveBoxDiv1,#youSaveBoxDiv2,#youSaveBoxDiv3,#youSaveBoxDiv4,#youSaveBoxDiv5,#youSaveBoxDiv6 {
     position: relative;
 }
 
