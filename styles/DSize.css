@@ -215,7 +215,7 @@ body > header {
 .outline {
     background-color: yellow;
     height: 400px;
-    width: 570px;
+    width: 555px;
     display: grid;
     grid-template-areas:
         "a"
@@ -445,7 +445,7 @@ font-size: 17px;
     "c d"
     "e f";
     margin-top: 70px;
-    margin-left: -5px;
+    margin-left: -10px;
 }
 
 section{
