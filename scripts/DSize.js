@@ -106,65 +106,7 @@ let saturday = getSaturdayOfCurrentWeek();
 
  function gridNumbers(){
     signGridNumber = this.value;
-    let section1 = document.getElementById("section1");
-    let section2 = document.getElementById("section2");
-    let section3 = document.getElementById("section3");
-    let section4 = document.getElementById("section4");
-    let section5 = document.getElementById("section5");
-    let section6 = document.getElementById("section6");
-
-    switch (signGridNumber) {
-        case "1":
-            section1.style.backgroundColor = "#4c4";
-            section2.style.backgroundColor = "";
-            section3.style.backgroundColor = "";
-            section4.style.backgroundColor = "";
-            section5.style.backgroundColor = "";
-            section6.style.backgroundColor = "";
-            break;
-        case "2":
-            section1.style.backgroundColor = "";
-            section2.style.backgroundColor = "#4c4";
-            section3.style.backgroundColor = "";
-            section4.style.backgroundColor = "";
-            section5.style.backgroundColor = "";
-            section6.style.backgroundColor = "";
-            break;
-        case "3":
-            section1.style.backgroundColor = "";
-            section2.style.backgroundColor = "";
-            section3.style.backgroundColor = "#4c4";
-            section4.style.backgroundColor = "";
-            section5.style.backgroundColor = "";
-            section6.style.backgroundColor = "";
-            break;
-         case "4":
-            section1.style.backgroundColor = "";
-            section2.style.backgroundColor = "";
-            section3.style.backgroundColor = "";
-            section4.style.backgroundColor = "#4c4";
-            section5.style.backgroundColor = "";
-            section6.style.backgroundColor = "";
-            break;
-        case "5":
-            section1.style.backgroundColor = "";
-            section2.style.backgroundColor = "";
-            section3.style.backgroundColor = "";
-            section4.style.backgroundColor = "";
-            section5.style.backgroundColor = "#4c4";
-            section6.style.backgroundColor = "";
-            break;
-        case "6":
-            section1.style.backgroundColor = "";
-            section2.style.backgroundColor = "";
-            section3.style.backgroundColor = "";
-            section4.style.backgroundColor = "";
-            section5.style.backgroundColor = "";
-            section6.style.backgroundColor = "#4c4";
-            break;
-        default:
-            break;
-    }
+   
  }
 // Create or load the recents signs from local storage.
 if(localStorage.getItem('signHistory') == null)
