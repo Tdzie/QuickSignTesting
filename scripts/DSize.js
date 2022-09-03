@@ -39,10 +39,7 @@ addToFavoritesButton.addEventListener('click', storeSignInformationForFavorites)
     const altDescriptionInput = document.getElementById("altDesInput");
     const saleDateInput = document.getElementById("saleDateInput");
 
-    const mainDescriptionSign = document.getElementById('mainDescription'+ signGridNumber);
-    const altDescriptionSign = document.getElementById('altDescription'+ signGridNumber);
-    const saleDateDescriptionSign = document.getElementById('saleDate'+ signGridNumber);
-
+   
     const centsLayoutButton = document.getElementById("centsLayout");
     const dollarCentsLayoutButton = document.getElementById("dolCenLayout");
     const forOneLayoutButton = document.getElementById("forLayout");
@@ -61,7 +58,7 @@ addToFavoritesButton.addEventListener('click', storeSignInformationForFavorites)
 
     const sizeInput = document.getElementById('size');
     const retailInput = document.getElementById('retailInput');
-    const retailOnSign = document.getElementById('retail'+ signGridNumber);
+
     const forAmountInput = document.getElementById('forAmount');
     const priceInput = document.getElementById('price');
 
@@ -227,6 +224,10 @@ function addToRecent(){
 
 
 function createSignFromHistory(){
+    let mainDescriptionSign = document.getElementById('mainDescription'+ signGridNumber);
+    let altDescriptionSign = document.getElementById('altDescription'+ signGridNumber);
+    let saleDateDescriptionSign = document.getElementById('saleDate'+ signGridNumber);
+    let retailOnSign = document.getElementById('retail'+ signGridNumber);
 
     let signInformation = signHistoryArr[this.value];
 
@@ -389,7 +390,12 @@ function addToFavorites(){
 
 // This function loads the sign information from the user favorites
 function createSignFromFavorites(event){
-
+    let mainDescriptionSign = document.getElementById('mainDescription'+ signGridNumber);
+    let altDescriptionSign = document.getElementById('altDescription'+ signGridNumber);
+    let saleDateDescriptionSign = document.getElementById('saleDate'+ signGridNumber);
+    let retailOnSign = document.getElementById('retail'+ signGridNumber);
+	
+	
     let signInformation = signFavortiesArr[this.value];
 
     if(event.ctrlKey){
