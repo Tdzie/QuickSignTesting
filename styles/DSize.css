@@ -367,7 +367,7 @@ font-size: 25px;
     position: relative;
 }
 
-.advCardDiv {
+#advCardDiv1, #advCardDiv2, #advCardDiv3, #advCardDiv4, #advCardDiv5, #advCardDiv6 {
     display: inline-block;
     position: relative;
 }
