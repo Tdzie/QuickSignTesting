@@ -92,7 +92,7 @@ function addWeekEndingSaleDate(){
 let saturday = getSaturdayOfCurrentWeek();
 
     saleDateInput.value = `ON SALE THRU ${saturday}`;
-    saleDateDescriptionSign.innerHTML = `ON SALE THRU ${saturday}`;
+    retailOnSign.innerHTML = `ON SALE THRU ${saturday}`;
 }
 // ===================================================End======================================================================
 
