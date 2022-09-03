@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+    
+               
+                    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-PJ7CQS2');</script>
+            
+               
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8RHM39TTD"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-G8RHM39TTD');
+                </script>
+
+-->
+
+    <meta charset="utf-8" />
+    <script src="scripts/DSize.js" defer></script>
+    <link rel="stylesheet" href="styles/DSize.css" />
+</head>
+<body>
+   
+        
+      <!--
+
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJ7CQS2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+ -->
+
+
+<div id="realHeader">
+    <img src="images/QuickSignlogo.png" alt="QuickSign logo" srcset="" width="150px" height="75px">
+    <span>
+        <p id="CurrentSignSize">Current Sign is D</p>
+        <input type="button" id="buttonToSwitchSignSizeToB" value="Switch to B"/>
+        <input type="button" id="buttonToSwitchSignSizeToC" value="Switch to C"/>
+    </span>
+    <span id="versionName">
+        <p>Version 1.31</p>
+        <p>Developer: Timothy Dziedzic</p>
+        <p>Contact: timothydziedzic@pricechopper.com</p>
+    </span>
+</div>
+    <header id="formHeader">
+          <div id="recentOutDiv">
+            <h1>Recent Signs</h1>
+            <div id="recentSigns">
+            
+            </div>
+        </div>
+        <div id="mainFormBoxes">
+
+        <fieldset>
+            <legend>On or off sale | LB on or off</legend>
+            <div id="onOff">
+                <input type="radio" id="notOnSale" name="OnOrOffSale" value="OffSale" onclick="noSale()" />
+                <label for="notOnSale">Not on sale</label>
+                <input type="radio" id="onSale" name="OnOrOffSale" value="onSale" onclick="saleAll()" checked />
+                <label for="onSale">On Sale</label>
+
+
+                <input type="radio" id="LBVisible" name="LBOnOrOff" value="on" />
+                <label for="LBVisible">Per Pound Sign</label>
+                <input type="radio" id="LBNotVisible" name="LBOnOrOff" value="off" checked />
+                <label for="LBNotVisible">Not Per Pound</label>
+
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Descriptions</legend>
+            <input id="mainDesInput" placeholder="Main Description" oninput="addMain()" style="width: 100%;" type="text" />
+            <br />
+            <input id="altDesInput" placeholder="Alt Description" oninput="addAlt()" style="width: 100%;" type="text" />
+            <br />
+            <a><input id="saleDateInput" type="text" value="ON SALE THRU 9/4/22" style="width: 100%;" oninput="addDate()" /></a>
+        </fieldset>
+        <fieldset>
+            <legend>Price Layout</legend>
+            <div id="choosePriceType">
+                    <input type="radio" class="btn btn-secondary" id="centsLayout" value="cents" name="layout" onclick="centsLayout()" />
+                    <label for="centsLayout">Cents</label>
+
+                    <input type="radio" class="btn btn-secondary" id="dolCenLayout" value="dollarCents" name="layout" onclick="dolCenLayout()" checked />
+                    <label for="dolCenLayout">Dollars</label>
+
+                    <input type="radio" class="btn btn-secondary" id="forLayout" value="forOne" name="layout" onclick="forLayout()" />
+                    <label for="forLayout">2/$5</label>
+
+                    <input type="radio" class="btn btn-secondary" id="forLayoutD" value="forTwo" name="layout" onclick="forLayoutdoub()" />
+                    <label for="forLayoutD">2/$10</label>
+
+                    <input type="radio" class="btn btn-secondary" id="boGoLayout" value="bogo" name="layout" onclick="boGoLayout()" />
+                    <label for="boGoLayout">Bogo</label>
+
+                    <input type="radio" class="btn btn-secondary" id="tenLayout" value="ten" name="layout" onclick="tenLayout()" />
+                    <label for="tenLayout">TENforTEN</label>
+                </div>
+        </fieldset>
+        <!--Unit type buttons-->
+        <fieldset>
+            <legend>Unit Type</legend>
+            <div id="chooseUnitType">
+                <input type="radio" id="unitTypePound" name="toggleUnitType" value="POUND" onclick="togglePound()" checked />
+                <label for="unitTypePound">POUND</label>
+
+                <input type="radio" id="unitTypeQuart" name="toggleUnitType" value="QUART" onclick="toggleQuart()" />
+                <label for="unitTypeQuart">QUART</label>
+
+                <input type="radio" id="unitTypeEach" name="toggleUnitType" value="EACH" onclick="toggleEach()" />
+                <label for="unitTypeEach">EACH</label>
+
+                <input type="radio" id="unitType50ct" name="toggleUnitType" value="50 COUNT" onclick="toggle50ct()" />
+                <label for="unitType50ct">50 SQ FT</label>
+
+                <input type="radio" id="unitType100ct" name="toggleUnitType" value="100 COUNT" onclick="toggle100ct()" />
+                <label for="unitType100ct">100 COUNT</label>
+
+                <input type="radio" id="unitTypeOunce" name="toggleUnitType" value="OUNCE" onclick="toggleOunce()" />
+                <label for="unitTypeOunce">OUNCE</label>
+
+                <input type="radio" id="unitType750ml" name="toggleUnitType" value="750ml" onclick="toggle750ml()" />
+                <label for="unitType750ml">750mL</label>
+
+                <input type="radio" id="unitType15l" name="toggleUnitType" value="15l" onclick="toggle15l()" />
+                <label for="unitType15l">1.5L</label>
+            </div>
+        </fieldset>
+        <!--Price input boxes-->
+        <fieldset>
+            <legend>Price Inputs</legend>
+            <div id="priceInputOuterDiv">
+                <div>
+                    <input id="size" type="text" style="width:150px;" placeholder="Size" />
+                    <p>Enter size of product</p>
+                </div>
+                <div>
+                    <input id="retailInput" type="text" oninput="addRetail()" placeholder="Retail" style="width:150px;" />
+                    <p id="pRetail">Enter retail price</p>
+                </div>
+                <select name="" id="forAmount" style="visibility:hidden;">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </select>
+                <div>
+                    <input id="price" style="width:100px;" placeholder=" Sale Price" type="text" />
+                    <p>Enter sale price</p>
+                </div>
+                <input type="button" id="submitButton" value="Submit" style="height:50px;" onclick="pickTypeOfPrice()">
+            </div>
+        </fieldset>
+        
+       
+        <fieldset>
+            <legend>Overrides</legend>
+
+            <div id="overideButtons">
+                <div>
+                <input type="radio" id="OverDisplay" name="toggleOver" value="On" onclick="toggleOn()" />
+                <label for="OverDisplay">On</label>
+                <input type="radio" id="OverDisplayOff" name="toggleOver" value="Off" onclick="toggleOff()" checked />
+                <label for="OverDisplayOff">Off</label>
+                </div>
+                <input type="button" value="Add Sign to Favories" id="addToFavories">
+            </div>
+
+            <div id="overides" style="display: none;">
+                <a><input id="mainPriceInput" placeholder="Price dollar" oninput="addPriceBefore()" /></a>
+                <br />
+                <a><input id="altPriceInput" placeholder="Price cents" oninput="addPriceAfter()" /></a>
+                <br />
+                <a><input id="unitPriceInput" placeholder="Change unit price" oninput="addUnitPrice()" /></a>
+                <br />
+                <a><input id="unitTypeInput" placeholder="PER LB, CT, PINT, ETC." oninput="addUnitType()" /></a>
+                <br />
+                <a><input id="MustBuyInput" value="MUST BUY " oninput="addMustBuy()" /></a>
+                <br />
+                <a><input id="youSavePriceMainInput" placeholder="You save dollars" oninput="addYouSaveMain()" /></a>
+                <br />
+                <a><input id="youSavePriceAltInput" placeholder="You save cents" oninput="addYouSaveAlt()" /></a>
+                <br />
+            </div>
+        </fieldset>
+        <!-- PRINT button-->
+        <input id="printButton" type="button" value="Print" onclick="window.print()" />
+    </div>
+    <div id="FavoritesOutDiv">
+            <h1>Favorites</h1>
+            <span>Hold Ctrl + click to remove</span>
+            <div id="FavoritesSigns">
+            
+            </div>
+            <p>Sign Grid</p>
+            <div id="signGridButtonOuterDiv">
+                <input type="radio" id="signGrid1Button" name="signGridButtons" checked value="1"></input>
+                <label for="signGrid1Button"></label>
+                <input type="radio" id="signGrid2Button" name="signGridButtons" value="2"></input>
+                <label for="signGrid2Button"></label>
+                <input type="radio" id="signGrid3Button" name="signGridButtons" value="3"></input>
+                <label for="signGrid3Button"></label>
+                <input type="radio" id="signGrid4Button" name="signGridButtons" value="4"></input>
+                <label for="signGrid4Button"></label>
+                <input type="radio" id="signGrid5Button" name="signGridButtons" value="5"></input>
+                <label for="signGrid5Button"></label>
+                <input type="radio" id="signGrid6Button" name="signGridButtons" value="6"></input>
+                <label for="signGrid6Button"></label>
+            </div>
+        </div>
+
+    </header>
+    <div id="outsideOutlineDiv">
+    <!------------------------------------Start of sign 1-------------------------------------------------->
+        <section id="section1">
+            <div id="outline1" class="outline">
+                <header class="outlineHeader"> Everyone <span class="outlineHeaderSpan">Loves to Save</span></header>
+                <div id="desBox1" class="desBox">
+                    <div id="mainDescription1" class="mainDescription">Type main item here.Do not use all caps.</div>
+                    <div id="altDescription1" class="altDescription">
+                        Do NOT change the font size/style. Just re-type your new copy here.
+                        
+                    </div>
+                    <div id="saleDate1" class="saleDate">ON SALE 10/21 THRU 11/05</div>
+                </div>
+                <div id="price1" class="price">
+                    <div id="pLeft1" width="auto1"></div>
+                    <div id="priceBeforeDecimal1" class="priceBeforeDecimal">5</div>
+                    <div id="priceAfterDecimal1" class="priceAfterDecimal">99</div>
+                    <!-- pRight has no CSS, it is only used with the JS file to adjust price layout-->
+                    <div id="pRight1"></div>
+                </div>
+                <footer class="outlineFooter">
+                    <div id="unitBox1" class="unitBox">
+                        <a class="unitBoxA"><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                        <div id="unitPriceBox1" class="unitPriceBox">19.99</div>
+                        <div id="unitType1" class="unitType">PER POUND</div>
+                    </div>
+                    <div id="rightBox1" style="padding-left: 20px; margin-top: -28px; ">
+                        <div id="mustBuy1" class="mustBuy" style=" height: 20px;">
+                <div id="MustBuyInner1"></div>
+                <div id="LBOption1" class="LBOption"  style="display:none;">lb.</div>
+                </div>
+                        <div id="advCardDiv1" class="advCardDiv">
+                            <a><img src="images/adv_card.jpg" height="19" width="300" /></a>
+                            <div id="retail1" class="retail"></div>
+                        </div>
+                        <div id="youSaveBoxDiv1" class="youSaveBoxDiv">
+                            <div id="youSaveImg1" class="youSaveImg">
+                                <img src="images/you_save.jpg" height="42" width="170" />
+                                <div id="youSavePriceMain1" class="youSavePriceMain"></div>
+                                <div id="youSavePriceAlt1" class="youSavePriceAlt"></div>
+                                <div id="whenYouBuy1" class="whenYouBuy">
+                                    <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                    <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                    <div style="margin-top: -4px;" id="spanWhenYouBuy1">BUY X</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mixMatch1"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    <!----------------------------------------End of the sign 1-------------------------------------->
+
+        <!------------------------------------Start of sign 2-------------------------------------------------->
+        <section id="section2">
+            <div id="outline2" class="outline">
+                <header class="outlineHeader"> Everyone <span class="outlineHeaderSpan">Loves to Save</span></header>
+                <div id="desBox2" class="desBox">
+                    <div id="mainDescription2" class="mainDescription">Type main item here.Do not use all caps.</div>
+                    <div id="altDescription2" class="altDescription">
+                        Do NOT change the font size/style. Just re-type your new copy here.
+                        
+                    </div>
+                    <div id="saleDate2" class="saleDate">ON SALE 10/21 THRU 11/05</div>
+                </div>
+                <div id="price2" class="price">
+                    <div id="pLeft2" width="auto"></div>
+                    <div id="priceBeforeDecimal2" class="priceBeforeDecimal">5</div>
+                    <div id="priceAfterDecimal2" class="priceAfterDecimal">99</div>
+                    <div id="pRight2"></div>
+                </div>
+                <footer class="outlineFooter">
+                    <div id="unitBox2" class="unitBox">
+                        <a class="unitBoxA"><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                        <div id="unitPriceBox2" class="unitPriceBox">19.99</div>
+                        <div id="unitType2" class="unitType">PER POUND</div>
+                    </div>
+                    <div id="rightBox2" style="padding-left: 20px; margin-top: -28px; ">
+                        <div id="mustBuy2" class="mustBuy" style=" height: 20px;">
+                <div id="MustBuyInner2"></div>
+                <div id="LBOption2" class="LBOption"  style="display:none;">lb.</div>
+                </div>
+                        <div id="advCardDiv2" class="advCardDiv">
+                            <a><img src="images/adv_card.jpg" height="19" width="300" /></a>
+                            <div id="retail2" class="retail"></div>
+                        </div>
+                        <div id="youSaveBoxDiv2" class="youSaveBoxDiv">
+                            <div id="youSaveImg2" class="youSaveImg">
+                                <img src="images/you_save.jpg" height="42" width="170" />
+                                <div id="youSavePriceMain2" class="youSavePriceMain"></div>
+                                <div id="youSavePriceAlt2" class="youSavePriceAlt"></div>
+                                <div id="whenYouBuy2" class="whenYouBuy">
+                                    <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                    <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                    <div style="margin-top: -4px;" id="spanWhenYouBuy2">BUY X</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mixMatch2"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    <!----------------------------------------End of the sign 2-------------------------------------->
+
+        <!------------------------------------Start of sign 3-------------------------------------------------->
+        <section id="section3">
+            <div id="outline3" class="outline">
+                <header class="outlineHeader"> Everyone <span class="outlineHeaderSpan">Loves to Save</span></header>
+                <div id="desBox3" class="desBox">
+                    <div id="mainDescription3" class="mainDescription">Type main item here.Do not use all caps.</div>
+                    <div id="altDescription3" class="altDescription">
+                        Do NOT change the font size/style. Just re-type your new copy here.
+                        
+                    </div>
+                    <div id="saleDate3" class="saleDate">ON SALE 10/21 THRU 11/05</div>
+                </div>
+                <div id="price3" class="price">
+                    <div id="pLeft3" width="auto"></div>
+                    <div id="priceBeforeDecimal3" class="priceBeforeDecimal">5</div>
+                    <div id="priceAfterDecimal3" class="priceAfterDecimal">99</div>
+                    <div id="pRight3"></div>
+                </div>
+                <footer class="outlineFooter">
+                    <div id="unitBox3" class="unitBox">
+                        <a class="unitBoxA"><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                        <div id="unitPriceBox3" class="unitPriceBox">19.99</div>
+                        <div id="unitType3" class="unitType">PER POUND</div>
+                    </div>
+                    <div id="rightBox3" style="padding-left: 20px; margin-top: -28px; ">
+                        <div id="mustBuy3" class="mustBuy" style=" height: 20px;">
+                <div id="MustBuyInner3"></div>
+                <div id="LBOption3" class="LBOption"  style="display:none;">lb.</div>
+                </div>
+                        <div id="advCardDiv3" class="advCardDiv">
+                            <a><img src="images/adv_card.jpg" height="19" width="300" /></a>
+                            <div id="retail3" class="retail"></div>
+                        </div>
+                        <div id="youSaveBoxDiv3" class="youSaveBoxDiv">
+                            <div id="youSaveImg3" class="youSaveImg">
+                                <img src="images/you_save.jpg" height="42" width="170" />
+                                <div id="youSavePriceMain3" class="youSavePriceMain"></div>
+                                <div id="youSavePriceAlt3" class="youSavePriceAlt"></div>
+                                <div id="whenYouBuy3" class="whenYouBuy">
+                                    <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                    <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                    <div style="margin-top: -4px;" id="spanWhenYouBuy3">BUY X</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mixMatch3"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    <!----------------------------------------End of the sign 3-------------------------------------->
+
+        <!------------------------------------Start of sign 4-------------------------------------------------->
+        <section id="section4">
+            <div id="outline4" class="outline">
+                <header class="outlineHeader"> Everyone <span class="outlineHeaderSpan">Loves to Save</span></header>
+                <div id="desBox4" class="desBox">
+                    <div id="mainDescription4" class="mainDescription">Type main item here.Do not use all caps.</div>
+                    <div id="altDescription4" class="altDescription">
+                        Do NOT change the font size/style. Just re-type your new copy here.
+                        
+                    </div>
+                    <div id="saleDate4" class="saleDate">ON SALE 10/21 THRU 11/05</div>
+                </div>
+                <div id="price4" class="price">
+                    <div id="pLeft4" width="auto"></div>
+                    <div id="priceBeforeDecimal4" class="priceBeforeDecimal">5</div>
+                    <div id="priceAfterDecimal4" class="priceAfterDecimal">99</div>
+                    <div id="pRight4"></div>
+                </div>
+                <footer class="outlineFooter">
+                    <div id="unitBox4" class="unitBox">
+                        <a class="unitBoxA"><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                        <div id="unitPriceBox4" class="unitPriceBox">19.99</div>
+                        <div id="unitType4" class="unitType">PER POUND</div>
+                    </div>
+                    <div id="rightBox4" style="padding-left: 20px; margin-top: -28px; ">
+                        <div id="mustBuy4" class="mustBuy" style=" height: 20px;">
+                <div id="MustBuyInner4"></div>
+                <div id="LBOption4" class="LBOption"  style="display:none;">lb.</div>
+                </div>
+                        <div id="advCardDiv4" class="advCardDiv">
+                            <a><img src="images/adv_card.jpg" height="19" width="300" /></a>
+                            <div id="retail4" class="retail"></div>
+                        </div>
+                        <div id="youSaveBoxDiv4" class="youSaveBoxDiv">
+                            <div id="youSaveImg4" class="youSaveImg">
+                                <img src="images/you_save.jpg" height="42" width="170" />
+                                <div id="youSavePriceMain4" class="youSavePriceMain"></div>
+                                <div id="youSavePriceAlt4" class="youSavePriceAlt"></div>
+                                <div id="whenYouBuy4" class="whenYouBuy">
+                                    <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                    <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                    <div style="margin-top: -4px;" id="spanWhenYouBuy4">BUY X</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mixMatch4"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    <!----------------------------------------End of the sign 4-------------------------------------->
+
+        <!------------------------------------Start of sign 5-------------------------------------------------->
+        <section id="section5">
+            <div id="outline5" class="outline">
+                <header class="outlineHeader"> Everyone <span class="outlineHeaderSpan">Loves to Save</span></header>
+                <div id="desBox5" class="desBox">
+                    <div id="mainDescription5" class="mainDescription">Type main item here.Do not use all caps.</div>
+                    <div id="altDescription5" class="altDescription">
+                        Do NOT change the font size/style. Just re-type your new copy here.
+                        
+                    </div>
+                    <div id="saleDate5" class="saleDate">ON SALE 10/21 THRU 11/05</div>
+                </div>
+                <div id="price5" class="price">
+                    <div id="pLeft5" width="auto"></div>
+                    <div id="priceBeforeDecimal5" class="priceBeforeDecimal">5</div>
+                    <div id="priceAfterDecimal5" class="priceAfterDecimal">99</div>
+                    <div id="pRight5"></div>
+                </div>
+                <footer class="outlineFooter">
+                    <div id="unitBox5" class="unitBox">
+                        <a class="unitBoxA"><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                        <div id="unitPriceBox5" class="unitPriceBox">19.99</div>
+                        <div id="unitType5" class="unitType">PER POUND</div>
+                    </div>
+                    <div id="rightBox5" style="padding-left: 20px; margin-top: -28px; ">
+                        <div id="mustBuy5" class="mustBuy" style=" height: 20px;">
+                <div id="MustBuyInner5"></div>
+                <div id="LBOption5" class="LBOption"  style="display:none;">lb.</div>
+                </div>
+                        <div id="advCardDiv5" class="advCardDiv">
+                            <a><img src="images/adv_card.jpg" height="19" width="300" /></a>
+                            <div id="retail5" class="retail"></div>
+                        </div>
+                        <div id="youSaveBoxDiv5" class="youSaveBoxDiv">
+                            <div id="youSaveImg5" class="youSaveImg">
+                                <img src="images/you_save.jpg" height="42" width="170" />
+                                <div id="youSavePriceMain5" class="youSavePriceMain"></div>
+                                <div id="youSavePriceAlt5" class="youSavePriceAlt"></div>
+                                <div id="whenYouBuy5" class="whenYouBuy">
+                                    <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                    <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                    <div style="margin-top: -4px;" id="spanWhenYouBuy5">BUY X</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mixMatch5"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    <!----------------------------------------End of the sign 5-------------------------------------->
+
+        <!------------------------------------Start of sign 6-------------------------------------------------->
+        <section id="section6">
+            <div id="outline6" class="outline">
+                <header class="outlineHeader"> Everyone <span class="outlineHeaderSpan">Loves to Save</span></header>
+                <div id="desBox6" class="desBox">
+                    <div id="mainDescription6" class="mainDescription">Type main item here.Do not use all caps.</div>
+                    <div id="altDescription6" class="altDescription">
+                        Do NOT change the font size/style. Just re-type your new copy here.
+                        
+                    </div>
+                    <div id="saleDate6" class="saleDate">ON SALE 10/21 THRU 11/05</div>
+                </div>
+                <div id="price6" class="price">
+                    <div id="pLeft6" width="auto"></div>
+                    <div id="priceBeforeDecimal6" class="priceBeforeDecimal">5</div>
+                    <div id="priceAfterDecimal6" class="priceAfterDecimal">99</div>
+                    <div id="pRight6"></div>
+                </div>
+                <footer class="outlineFooter">
+                    <div id="unitBox6" class="unitBox">
+                        <a class="unitBoxA"><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                        <div id="unitPriceBox6" class="unitPriceBox">19.99</div>
+                        <div id="unitType6" class="unitType">PER POUND</div>
+                    </div>
+                    <div id="rightBox6" style="padding-left: 20px; margin-top: -28px; ">
+                        <div id="mustBuy6" class="mustBuy" style=" height: 20px;">
+                <div id="MustBuyInner6"></div>
+                <div id="LBOption6" class="LBOption"  style="display:none;">lb.</div>
+                </div>
+                        <div id="advCardDiv6" class="advCardDiv">
+                            <a><img src="images/adv_card.jpg" height="19" width="300" /></a>
+                            <div id="retail6" class="retail"></div>
+                        </div>
+                        <div id="youSaveBoxDiv6" class="youSaveBoxDiv">
+                            <div id="youSaveImg6" class="youSaveImg">
+                                <img src="images/you_save.jpg" height="42" width="170" />
+                                <div id="youSavePriceMain6" class="youSavePriceMain"></div>
+                                <div id="youSavePriceAlt6" class="youSavePriceAlt"></div>
+                                <div id="whenYouBuy6" class="whenYouBuy">
+                                    <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                    <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                    <div style="margin-top: -4px;" id="spanWhenYouBuy6">BUY X</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mixMatch6"></div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+<!----------------------------------------End of the sign 6-------------------------------------->
+</div>
+  
+</body>
+</html>

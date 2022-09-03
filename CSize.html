@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+    
+               
+                    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-PJ7CQS2');</script>
+            
+               
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8RHM39TTD"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-G8RHM39TTD');
+                </script>
+
+-->
+
+    <meta charset="utf-8" />
+    <script src="scripts/CSize.js" defer></script>
+    <link rel="stylesheet" href="styles/CSize.css" />
+</head>
+<body>
+   
+        
+      <!--
+
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJ7CQS2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+ -->
+
+
+<div id="realHeader">
+    <img src="images/QuickSignlogo.png" alt="QuickSign logo" srcset="" width="150px" height="75px">
+    <span>
+        <p id="CurrentSignSize">Current Sign is C</p>
+        <input type="button" id="buttonToSwitchSignSizeToB" value="Switch to B"/>
+        <input type="button" id="buttonToSwitchSignSizeToD" value="Switch to D"/>
+    </span>
+    <span id="versionName">
+        <p>Version 1.31</p>
+        <p>Developer: Timothy Dziedzic</p>
+        <p>Contact: timothydziedzic@pricechopper.com</p>
+    </span>
+</div>
+    <header id="formHeader">
+          <div id="recentOutDiv">
+            <h1>Recent Signs</h1>
+            <div id="recentSigns">
+            
+            </div>
+        </div>
+        <div id="mainFormBoxes">
+
+        <fieldset>
+            <legend>On or off sale | LB on or off</legend>
+            <div id="onOff">
+                <input type="radio" id="notOnSale" name="OnOrOffSale" value="OffSale" onclick="noSale()" />
+                <label for="notOnSale">Not on sale</label>
+                <input type="radio" id="onSale" name="OnOrOffSale" value="onSale" onclick="saleAll()" checked />
+                <label for="onSale">On Sale</label>
+
+
+                <input type="radio" id="LBVisible" name="LBOnOrOff" value="on" />
+                <label for="LBVisible">Per Pound Sign</label>
+                <input type="radio" id="LBNotVisible" name="LBOnOrOff" value="off" checked />
+                <label for="LBNotVisible">Not Per Pound</label>
+
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Descriptions</legend>
+            <input id="mainDesInput" placeholder="Main Description" oninput="addMain()" style="width: 100%;" type="text" />
+            <br />
+            <input id="altDesInput" placeholder="Alt Description" oninput="addAlt()" style="width: 100%;" type="text" />
+            <br />
+            <a><input id="saleDateInput" type="text" value="ON SALE THRU 9/4/22" style="width: 100%;" oninput="addDate()" /></a>
+        </fieldset>
+        <fieldset>
+            <legend>Price Layout</legend>
+            <div id="choosePriceType">
+                    <input type="radio" class="btn btn-secondary" id="centsLayout" value="cents" name="layout" onclick="centsLayout()" />
+                    <label for="centsLayout">Cents</label>
+
+                    <input type="radio" class="btn btn-secondary" id="dolCenLayout" value="dollarCents" name="layout" onclick="dolCenLayout()" checked />
+                    <label for="dolCenLayout">Dollars</label>
+
+                    <input type="radio" class="btn btn-secondary" id="forLayout" value="forOne" name="layout" onclick="forLayout()" />
+                    <label for="forLayout">2/$5</label>
+
+                    <input type="radio" class="btn btn-secondary" id="forLayoutD" value="forTwo" name="layout" onclick="forLayoutdoub()" />
+                    <label for="forLayoutD">2/$10</label>
+
+                    <input type="radio" class="btn btn-secondary" id="boGoLayout" value="bogo" name="layout" onclick="boGoLayout()" />
+                    <label for="boGoLayout">Bogo</label>
+
+                    <input type="radio" class="btn btn-secondary" id="tenLayout" value="ten" name="layout" onclick="tenLayout()" />
+                    <label for="tenLayout">TENforTEN</label>
+                </div>
+        </fieldset>
+        <!--Unit type buttons-->
+        <fieldset>
+            <legend>Unit Type</legend>
+            <div id="chooseUnitType">
+                <input type="radio" id="unitTypePound" name="toggleUnitType" value="POUND" onclick="togglePound()" checked />
+                <label for="unitTypePound">POUND</label>
+
+                <input type="radio" id="unitTypeQuart" name="toggleUnitType" value="QUART" onclick="toggleQuart()" />
+                <label for="unitTypeQuart">QUART</label>
+
+                <input type="radio" id="unitTypeEach" name="toggleUnitType" value="EACH" onclick="toggleEach()" />
+                <label for="unitTypeEach">EACH</label>
+
+                <input type="radio" id="unitType50ct" name="toggleUnitType" value="50 COUNT" onclick="toggle50ct()" />
+                <label for="unitType50ct">50 SQ FT</label>
+
+                <input type="radio" id="unitType100ct" name="toggleUnitType" value="100 COUNT" onclick="toggle100ct()" />
+                <label for="unitType100ct">100 COUNT</label>
+
+                <input type="radio" id="unitTypeOunce" name="toggleUnitType" value="OUNCE" onclick="toggleOunce()" />
+                <label for="unitTypeOunce">OUNCE</label>
+
+                <input type="radio" id="unitType750ml" name="toggleUnitType" value="750ml" onclick="toggle750ml()" />
+                <label for="unitType750ml">750mL</label>
+
+                <input type="radio" id="unitType15l" name="toggleUnitType" value="15l" onclick="toggle15l()" />
+                <label for="unitType15l">1.5L</label>
+            </div>
+        </fieldset>
+        <!--Price input boxes-->
+        <fieldset>
+            <legend>Price Inputs</legend>
+            <div id="priceInputOuterDiv">
+                <div>
+                    <input id="size" type="text" style="width:150px;" placeholder="Size" />
+                    <p>Enter size of product</p>
+                </div>
+                <div>
+                    <input id="retailInput" type="text" oninput="addRetail()" placeholder="Retail" style="width:150px;" />
+                    <p id="pRetail">Enter retail price</p>
+                </div>
+                <select name="" id="forAmount" style="visibility:hidden;">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </select>
+                <div>
+                    <input id="price" style="width:100px;" placeholder=" Sale Price" type="text" />
+                    <p>Enter sale price</p>
+                </div>
+                <input type="button" id="submitButton" value="Submit" style="height:50px;" onclick="pickTypeOfPrice()">
+            </div>
+        </fieldset>
+        
+       
+        <fieldset>
+            <legend>Overrides</legend>
+
+            <div id="overideButtons">
+                <div>
+                <input type="radio" id="OverDisplay" name="toggleOver" value="On" onclick="toggleOn()" />
+                <label for="OverDisplay">On</label>
+                <input type="radio" id="OverDisplayOff" name="toggleOver" value="Off" onclick="toggleOff()" checked />
+                <label for="OverDisplayOff">Off</label>
+                </div>
+                <input type="button" value="Add Sign to Favories" id="addToFavories">
+            </div>
+
+            <div id="overides" style="display: none;">
+                <a><input id="mainPriceInput" placeholder="Price dollar" oninput="addPriceBefore()" /></a>
+                <br />
+                <a><input id="altPriceInput" placeholder="Price cents" oninput="addPriceAfter()" /></a>
+                <br />
+                <a><input id="unitPriceInput" placeholder="Change unit price" oninput="addUnitPrice()" /></a>
+                <br />
+                <a><input id="unitTypeInput" placeholder="PER LB, CT, PINT, ETC." oninput="addUnitType()" /></a>
+                <br />
+                <a><input id="MustBuyInput" value="MUST BUY " oninput="addMustBuy()" /></a>
+                <br />
+                <a><input id="youSavePriceMainInput" placeholder="You save dollars" oninput="addYouSaveMain()" /></a>
+                <br />
+                <a><input id="youSavePriceAltInput" placeholder="You save cents" oninput="addYouSaveAlt()" /></a>
+                <br />
+            </div>
+        </fieldset>
+        <!-- PRINT button-->
+        <input id="printButton" type="button" value="Print" onclick="window.print()" />
+    </div>
+    <div id="FavoritesOutDiv">
+            <h1>Favorites</h1>
+            <span>Hold Ctrl + click to remove</span>
+            <div id="FavoritesSigns">
+            
+            </div>
+        </div>
+
+    </header>
+
+    <!------------------------------------Start of the sign-------------------------------------------------->
+    <section>
+        <div id="outline">
+            <header> Everyone <span>Loves to Save</span></header>
+            <div id="desBox">
+                <div id="mainDescription">Type main item here.Do not use all caps.</div>
+                <div id="altDescription">
+                    Do NOT change the font size/style. Just re-type your new copy here.
+                    
+                </div>
+                <div id="saleDate">ON SALE 10/21 THRU 11/05</div>
+            </div>
+            <div id="price">
+                <div id="pLeft" width="auto"></div>
+                <div id="priceBeforeDecimal">5</div>
+                <div id="priceAfterDecimal">99</div>
+                <div id="pRight"></div>
+            </div>
+            <footer>
+                <div id="unitBox">
+                    <a><img src="images/unit_price.jpg" height="16" width="80" /></a>
+                    <div id="unitPriceBox">19.99</div>
+                    <div id="unitType">PER POUND</div>
+                </div>
+                <div id="rightBox" style="padding-left: 20px; margin-top: -28px; ">
+                    <div id="mustBuy" style=" height: 20px;">
+			<div id="MustBuyInner"></div>
+			<div id="LBOption"  style="display:none;">lb.</div>
+		    </div>
+                    <div id="advCardDiv">
+                        <a><img src="images/adv_card.jpg" height="19" width="340" /></a>
+                        <div id="retail"></div>
+                    </div>
+                    <div id="youSaveBoxDiv">
+                        <div id="youSaveImg">
+                            <img src="images/you_save.jpg" height="42" width="170" />
+                            <div id="youSavePriceMain"></div>
+                            <div id="youSavePriceAlt"></div>
+                            <div id="whenYouBuy">
+                                <p style="margin-top: 2px; margin-bottom: 2px;">WHEN</p>
+                                <p style="margin-top: -5px; margin-bottom: 1px;">YOU</p>
+                                <div style="margin-top: -4px;" id="spanWhenYouBuy">BUY X</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mixMatch"></div>
+                </div>
+            </footer>
+        </div>
+    </section>
+<!----------------------------------------End of the sign outline-------------------------------------->
+   
+  
+</body>
+</html>
