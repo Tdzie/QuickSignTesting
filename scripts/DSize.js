@@ -1453,7 +1453,7 @@ function checkPriceForValidData(){
         location.href = 'CSize.html';
         })
 document.querySelector("#realHeader > img").addEventListener('click', function(){
-    location.href = 'Index.html';
+    location.href = 'index.html';
 })
 
         // Windows onload function

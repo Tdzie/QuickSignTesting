@@ -1375,7 +1375,7 @@ function checkPriceForValidData(){
         location.href = 'DSize.html';
         })
 document.querySelector("#realHeader > img").addEventListener('click', function(){
-    location.href = 'Index.html';
+    location.href = 'index.html';
 })
         window.onload = (event) => {
     addToRecent();
