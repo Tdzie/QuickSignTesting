@@ -1,8 +1,8 @@
 #outline3, #outline4{
-    margin-top: 90px;
+    margin-top: 0px;
 }
 #outline5, #outline6{
-    margin-top:213px;
+    margin-top:20px;
 }
 #priceInputOuterDiv{
     display: flex;
@@ -261,7 +261,7 @@ body {
     padding-top: 10px;
     font-family: Clarendon, serif;
     width: 414px;
-    font-weight: lighter;
+    font-weight: bold;
 }
 
 .altDescription {
