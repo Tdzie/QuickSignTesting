@@ -1409,5 +1409,4 @@ document.querySelector("#realHeader > img").addEventListener('click', function()
     addToRecent();
     addToFavorites();
     addWeekEndingSaleDate();
-    document.getElementById('section1').style.backgroundColor = "#4c4";
 };
