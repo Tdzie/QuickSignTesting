@@ -10,7 +10,9 @@
 
 }
 
-
+#signD{
+    margin-left: -86px;
+}
 
 #addToFavories {
     height: 36px;
@@ -98,6 +100,7 @@
 
 #realHeader>img {
     margin: 5px;
+    cursor: pointer;
 }
 
 fieldset>legend {

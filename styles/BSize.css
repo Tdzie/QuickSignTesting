@@ -86,6 +86,7 @@
 }
 #realHeader > img {
        margin: 5px;
+       cursor: pointer;
 }
 
 fieldset > legend {

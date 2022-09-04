@@ -77,7 +77,7 @@ sizeInput.addEventListener('click', function(){this.select();})
 // ============================ function to get the date for this saturday used for value of sale date input and date on sign ============
 //  
 function getSaturdayOfCurrentWeek() {
-	    let retailOnSign = document.getElementById('retail'+ signGridNumber);
+	
   const today = new Date();
   const monday = today.getDate() - today.getDay() + 1;
   const sixth = monday + 5;
@@ -90,7 +90,7 @@ function getSaturdayOfCurrentWeek() {
 // This function is called during window.load at the bottom of the file.
 function addWeekEndingSaleDate(){
 let saturday = getSaturdayOfCurrentWeek();
-
+    let retailOnSign = document.getElementById('retail'+ signGridNumber);
     saleDateInput.value = `ON SALE THRU ${saturday}`;
     retailOnSign.innerHTML = `ON SALE THRU ${saturday}`;
 }
@@ -1032,6 +1032,7 @@ function checkRetailForValidData(){
             retailPForErrorMessage.style.color = "#4c4";
             retailInput.value = alterPriceAddDecimal(retailInput.value);
             retailInput.style.backgroundColor = "#E4FFA0";
+              let retailOnSign = document.getElementById('retail' + signGridNumber);
               retailOnSign.innerHTML = retailInput.value;
             return true;
         }
@@ -1070,12 +1071,13 @@ function checkPriceForValidData(){
 
     // FUNCTION TO CHECK THE TYPE OF PRICE AND RUN AUTO FILLS
     function pickTypeOfPrice() {
-    
+    let altDescriptionSign = document.getElementById('altDescription'+ signGridNumber);
+    let mainDescriptionSign = document.getElementById('mainDescription'+ signGridNumber);
     if(checkSizeForValidData() && checkRetailForValidData() && checkPriceForValidData()){
 
-        if(altDescriptionInput.value == ""){
-            altDescriptionSign.innerText = " ";
-        }
+    altDescriptionSign.innerText = altDescriptionInput.value;
+    mainDescriptionSign.innerText = mainDescriptionInput.value;
+        
        
 
 
