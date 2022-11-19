@@ -349,8 +349,8 @@ div#outline > footer {
         display: none;
     }
     div#outline {
-       /* margin-top: -27px; */
-        margin-left: 80px;
+       margin-top: 8px;
+        margin-left: 110px;
         transform: rotate(-90deg);
     }
 
