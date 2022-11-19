@@ -349,7 +349,9 @@ div#outline > footer {
         display: none;
     }
     div#outline {
-        margin-top: -27px;
+       /* margin-top: -27px; */
+        margin-left: 80px;
+        transform: rotate(-90deg);
     }
 
     body > header {
@@ -364,6 +366,7 @@ div#outline > footer {
         -webkit-print-color-adjust: exact;
         color: #ffffff;
     }
+    
 }
 
 .noSale {
