@@ -12,7 +12,7 @@ let signFavortiesArr = [];
 
 // Number of signs kept in recent and favorites
 const limitOfSignsInFavories = 25;
-const limitOfSignsInRecent = 25;
+const limitOfSignsInRecent = 50;
 
 // print button event to store signs in recent
 printButton.addEventListener('click', storeSignInformation);

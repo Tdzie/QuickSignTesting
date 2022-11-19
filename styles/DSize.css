@@ -394,7 +394,7 @@ font-size: 25px;
         display: none;
     }
 
-    .youSaveBoxDiv {
+    #youSaveBoxDiv1,#youSaveBoxDiv2,#youSaveBoxDiv3,#youSaveBoxDiv4,#youSaveBoxDiv5,#youSaveBoxDiv6 {
         -webkit-print-color-adjust: exact;
         color: #ffffff;
     }
